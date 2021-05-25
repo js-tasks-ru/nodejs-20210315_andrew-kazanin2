@@ -30,10 +30,6 @@ describe('streams/line-split-stream', () => {
 
       lines.on('data', onData);
       lines.on('end', () => {
-        // console.log('firstCall', onData.firstCall.args[0]);
-        // console.log('secondCall', onData.secondCall.args[0]);
-        // console.log('thirdCall', onData.thirdCall.args[0]);
-
         expect(onData.calledThrice, 'событие data должно быть вызвано 3 раза').to.be.true;
         expect(onData.firstCall.args[0]).to.equal('ab');
         expect(onData.secondCall.args[0]).to.equal('cd');
